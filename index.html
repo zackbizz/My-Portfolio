@@ -565,31 +565,44 @@ window.onscroll = () => {
   });
 };
 
-document.getElementById('allBtn').addEventListener("click",function(){
-  document.getElementById("project1").style.display='block';
-  document.getElementById("project2").style.display='block';
-  document.getElementById("project3").style.display='block';
-  document.getElementById("project4").style.display='block';
-  document.getElementById("project5").style.display='block';
-  document.getElementById("project6").style.display='block';
+document.getElementById('allBtn').addEventListener("click", function() {
+    showAllProjects();
 });
-document.getElementById('indiviualBtn').addEventListener("click",function(){
-  document.getElementById("project1").style.display='block';
-  document.getElementById("project2").style.display='none';
-  document.getElementById("project3").style.display='none';
-  document.getElementById("project4").style.display='none';
-  document.getElementById("project5").style.display='none';
-  document.getElementById("project6").style.display='block';
-  
+
+document.getElementById('indiviualBtn').addEventListener("click", function() {
+    showIndividualProjects();
 });
-document.getElementById('groupBtn').addEventListener("click",function(){
-  document.getElementById("project1").style.display='none';
-  document.getElementById("project2").style.display='block';
-  document.getElementById("project3").style.display='block';
-  document.getElementById("project4").style.display='block';
-  document.getElementById("project5").style.display='block';
-  document.getElementById("project6").style.display='none';
+
+document.getElementById('groupBtn').addEventListener("click", function() {
+    showGroupProjects();
 });
+
+function showAllProjects() {
+    for (let i = 1; i <= 6; i++) {
+        document.getElementById("project" + i).style.display = 'block';
+    }
+}
+
+function showIndividualProjects() {
+    for (let i = 1; i <= 6; i++) {
+        if (i === 2 || i === 3 || i === 6) {
+            document.getElementById("project" + i).style.display = 'block';
+        } else {
+            document.getElementById("project" + i).style.display = 'none';
+        }
+    }
+}
+
+function showGroupProjects() {
+    for (let i = 1; i <= 6; i++) {
+        if (i === 1 || i === 4 || i === 5) {
+            document.getElementById("project" + i).style.display = 'block';
+        } else {
+            document.getElementById("project" + i).style.display = 'none';
+        }
+    }
+}
+
 </script>
 </body>
 
