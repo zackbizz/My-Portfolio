@@ -528,7 +528,6 @@ ul.ul1 li.li1:hover::before{
 </div>
 <script>
   'use strict'
-
   let firstdiv = document.getElementById('firstdiv');
 let btn3 = firstdiv.getElementsByClassName('btn3');
 
@@ -551,7 +550,6 @@ window.onscroll = () => {
   navLinks.forEach(link => {
     let sectionId = link.getAttribute('href').substring(1); // Extract the section id from the href
     let section = document.getElementById(sectionId);
-    
     if (section) {
       let sectionTop = section.offsetTop;
       let sectionHeight = section.offsetHeight;
