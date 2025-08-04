@@ -280,10 +280,10 @@
             <section id="Portfolio" class="py-16 max-w-6xl mx-auto">
                 <h2 class="section-title text-4xl mb-8 text-center">Portfolio</h2>
                 <p class="text-xl mb-8 text-center">My Projects</p>
-                <div class="flex justify-center gap-4 mb-12">
-                    <button id="allBtn" class="btn3 active">All</button>
-                    <button id="indiviualBtn" class="btn3">Individual</button>
-                    <button id="groupBtn" class="btn3">Group</button>
+           <div id="filterButtons" class="flex justify-center gap-4 mb-12">
+                    <button id="allBtn" class="btn3 active" data-filter="all">All</button>
+                    <button id="individualBtn" class="btn3" data-filter="individual">Individual</button>
+                    <button id="groupBtn" class="btn3" data-filter="group">Group</button>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div id="project1" class="box p-6">
@@ -392,11 +392,27 @@
     </div>
     <script>
         'use strict';
-        const buttons = document.querySelectorAll('#firstdiv .btn3');
+    const buttons = document.querySelectorAll('#filterButtons .btn3');
+        const projects = document.querySelectorAll('[data-category]');
+
         buttons.forEach(btn => {
             btn.addEventListener('click', () => {
+                // Remove active class from all buttons
                 buttons.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
                 btn.classList.add('active');
+
+                // Get filter value
+                const filter = btn.getAttribute('data-filter');
+
+                // Show/hide projects based on filter
+                projects.forEach(project => {
+                    if (filter === 'all' || project.getAttribute('data-category') === filter) {
+                        project.style.display = 'block';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
             });
         });
 
