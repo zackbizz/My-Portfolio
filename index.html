@@ -188,7 +188,6 @@
                     </div>
                     <div class="md:w-1/2 p-8">
                         <img src="edited.jpg" alt="Zekarias Sebsib" class="w-80 h-80 object-cover rounded-full mx-auto" />
-                        
                     </div>
                 </div>
             </section>
@@ -420,13 +419,27 @@
         const navLinks = document.querySelectorAll('nav a');
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
             navLinks.forEach(link => {
                 const sectionId = link.getAttribute('href').substring(1);
                 const section = document.getElementById(sectionId);
                 if (section) {
-                    const sectionTop = section.offsetTop - 50;
+                    const sectionTop = section.offsetTop - 100; // Adjusted offset for padding
                     const sectionHeight = section.offsetHeight;
-                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    const sectionBottom = sectionTop + sectionHeight;
+
+                    // Check if the section is in view or if we're at the bottom for Contact
+                    const isAtBottom = scrollY + windowHeight >= documentHeight - 50; // Near bottom
+                    const isInSection = scrollY >= sectionTop && scrollY < sectionBottom;
+
+                    if (sectionId === 'Contact' && isAtBottom) {
+                        // Special case for Contact section at the bottom
+                        navLinks.forEach(l => l.classList.remove('activeNav'));
+                        link.classList.add('activeNav');
+                    } else if (isInSection) {
+                        navLinks.forEach(l => l.classList.remove('activeNav'));
                         link.classList.add('activeNav');
                     } else {
                         link.classList.remove('activeNav');
