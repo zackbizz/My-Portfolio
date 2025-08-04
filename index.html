@@ -280,13 +280,13 @@
             <section id="Portfolio" class="py-16 max-w-6xl mx-auto">
                 <h2 class="section-title text-4xl mb-8 text-center">Portfolio</h2>
                 <p class="text-xl mb-8 text-center">My Projects</p>
-           <div id="filterButtons" class="flex justify-center gap-4 mb-12">
+                <div id="filterButtons" class="flex justify-center gap-4 mb-12">
                     <button id="allBtn" class="btn3 active" data-filter="all">All</button>
                     <button id="individualBtn" class="btn3" data-filter="individual">Individual</button>
                     <button id="groupBtn" class="btn3" data-filter="group">Group</button>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div id="project1" class="box p-6">
+                    <div id="project1" class="box p-6" data-category="individual">
                         <img src="EMS-placeholder.jpg" alt="Employee Management System" class="h-48 w-full object-cover rounded-lg mb-4" />
                         <h3 class="text-xl font-semibold mb-2">Employee Management System</h3>
                         <p class="text-gray-300 italic mb-4">A system for efficient employee and admin management, including leave tracking and profile editing. Built with HTML, CSS, JavaScript, and PHP.</p>
@@ -294,7 +294,7 @@
                             <button class="btn1 px-6 py-2 rounded-lg">Download Code</button>
                         </a>
                     </div>
-                    <div id="project2" class="box p-6">
+                    <div id="project2" class="box p-6" data-category="group">
                         <img src="SDM-placeholder.jpg" alt="Student Management System" class="h-48 w-full object-cover rounded-lg mb-4" />
                         <h3 class="text-xl font-semibold mb-2">Student Management System</h3>
                         <p class="text-gray-300 italic mb-4">A system for student enrollment and roster management with admin and employee logins. Built with Java and MySQL.</p>
@@ -307,7 +307,7 @@
                             </a>
                         </div>
                     </div>
-                    <div id="project3" class="box p-6">
+                    <div id="project3" class="box p-6" data-category="group">
                         <img src="SCM-placeholder.jpg" alt="Student Clearance System" class="h-48 w-full object-cover rounded-lg mb-4" />
                         <h3 class="text-xl font-semibold mb-2">Student Clearance System</h3>
                         <p class="text-gray-300 italic mb-4">A system for students, staff, and admins to manage clearance requests with real-time tracking. Built with web technologies.</p>
@@ -315,7 +315,7 @@
                             <button class="btn1 px-6 py-2 rounded-lg">Visit App</button>
                         </a>
                     </div>
-                    <div id="project4" class="box p-6">
+                    <div id="project4" class="box p-6" data-category="group">
                         <img src="kiray-placeholder.jpg" alt="House Renting App" class="h-48 w-full object-cover rounded-lg mb-4" />
                         <h3 class="text-xl font-semibold mb-2">House Renting App</h3>
                         <p class="text-gray-300 italic mb-4">A user-friendly app for tenants and landlords to manage property rentals. Built with React-Native and PHP.</p>
@@ -323,7 +323,7 @@
                             <button class="btn1 px-6 py-2 rounded-lg">Download Code</button>
                         </a>
                     </div>
-                    <div id="project5" class="box p-6">
+                    <div id="project5" class="box p-6" data-category="group">
                         <img src="MathsQuiz-placeholder.jpg" alt="Kids Math Quiz App" class="h-48 w-full object-cover rounded-lg mb-4" />
                         <h3 class="text-xl font-semibold mb-2">Kids Math Quiz App</h3>
                         <p class="text-gray-300 italic mb-4">A fun math quiz app for kids with randomized questions. Built with React-Native.</p>
@@ -331,7 +331,7 @@
                             <button class="btn1 px-6 py-2 rounded-lg">Download Code</button>
                         </a>
                     </div>
-                    <div id="project7" class="box p-6">
+                    <div id="project7" class="box p-6" data-category="individual">
                         <img src="events-placeholder.jpg" alt="Event Planning Website Template" class="h-48 w-full object-cover rounded-lg mb-4" />
                         <h3 class="text-xl font-semibold mb-2">Event Planning Website Template</h3>
                         <p class="text-gray-300 italic mb-4">A UI-focused website template to enhance design skills.</p>
@@ -350,7 +350,7 @@
                         <div class="flex items-center">
                             <ion-icon name="location-outline" class="text-2xl text-gray-500 mr-4"></ion-icon>
                             <div>
-                                <p class="text-blue-400 font-semibold">xAI:</p>
+                                <p class="text-blue-400 font-semibold">Address:</p>
                                 <p>Addis Ababa, Ethiopia</p>
                             </div>
                         </div>
@@ -392,7 +392,7 @@
     </div>
     <script>
         'use strict';
-    const buttons = document.querySelectorAll('#filterButtons .btn3');
+        const buttons = document.querySelectorAll('#filterButtons .btn3');
         const projects = document.querySelectorAll('[data-category]');
 
         buttons.forEach(btn => {
@@ -432,22 +432,6 @@
                     }
                 }
             });
-        });
-
-        document.getElementById('allBtn').addEventListener('click', () => {
-            ['project1', 'project2', 'project3', 'project4', 'project5', 'project7'].forEach(id => {
-                document.getElementById(id).style.display = 'block';
-            });
-        });
-
-        document.getElementById('indiviualBtn').addEventListener('click', () => {
-            ['project1', 'project7'].forEach(id => document.getElementById(id).style.display = 'block');
-            ['project2', 'project3', 'project4', 'project5'].forEach(id => document.getElementById(id).style.display = 'none');
-        });
-
-        document.getElementById('groupBtn').addEventListener('click', () => {
-            ['project2', 'project3', 'project4', 'project5'].forEach(id => document.getElementById(id).style.display = 'block');
-            ['project1', 'project7'].forEach(id => document.getElementById(id).style.display = 'none');
         });
     </script>
 </body>
