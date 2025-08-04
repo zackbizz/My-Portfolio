@@ -1,596 +1,438 @@
-<html>
-    <head>
-<link href='https://fonts.googleapis.com/css?family=Young Serif' rel='stylesheet'>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Zeyada' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Shadows Into Light' rel='stylesheet'>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-
-    html{
-        scroll-behavior: smooth;
-    }
-    body{
-        background-color:black;
-        color:white;
-
-    }
-    @media(min-height:300px){
-nav ul{
-    position: sticky;
-top:0;
-}
-    }
-
-    .icon{
-        background:linear-gradient(45deg,#4f1919,#ff3333);
-    border-radius: 50%;
-    width: 100%;
-    height:60px;
-    display: flex;
-    margin-right: -50px;
-    align-self: center;
-    align-items: center;
-    justify-content: center;
-border: 6px solid black;
-transition: 0.5s;
-position: relative;    
-    }
-    .activeNav{
-        transform: translateX(25px);
-   
-    }
-/*
-.icon::before {
-  content: '';
-  position: absolute;
-  right: 9px;
-bottom:-20px;  
-  width: 15px;
-  height: 15px;
-  background: #f00;
-  border-bottom-right-radius: 30px;   box-shadow: 0px 5px 0 0 #222327; 
-}
-
-.icon::after {
-  content: '';
-  position: absolute;
-  right: 100%;
-top:-22px;  
-  width: 20px;
-  height: 20px;
-  background: #f00;
-  border-top-right-radius: 20px;   box-shadow: 0px -10px 0 0 #222327; 
-}
-*/
-.box1{
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
-}
-.c{
-    color: #c49b63; /* Start with transparent text color */
-    text-shadow: 0 0 10px #c49b63, 0 0 20px #c49b63, 0 0 30px #c49b63; /* Add multiple shadows to create the glowing effect */
-    animation: glow 1s infinite alternate;
-}
-.btn1{
-    box-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue; /* Add multiple shadows to create the glowing effect */
-}
-.box2{
-    box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white; /* Add multiple shadows to create the glowing effect */
-    
-}
-.box3{
-    box-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 30px #00bcd4; /* Add multiple shadows to create the glowing effect */
-    
-}
-
-.btn1:hover{
-    background-color: black;
-}
-.about-txt{
-background-image:url('abouttxt.jpg');
-  background-size: contain;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-font-family: 'Sofia';
-}
-.portfolio-txt{
-  background-image:url('abouttxt.jpg');
-  background-size: contain;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-font-family: 'Sofia';
-
-}
-.progress-container {
-
-  height: 25px;
-  background-color: #ccc;
-  
-  overflow: hidden;
-}
-.progress-bar {
-  height: 100%;
-
-  
-box-shadow: inset 0 0 0 0 #c49b63;
-transition: ease-out 2s;
-
-}
-.box{
-    position: relative;
-background: black;
-margin-right:10px;
-margin-top:10px;
-margin-left: 10px;
-}
-.box::before{
-position: absolute;
-    content: '';
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    right: -2px;
-    background: #fff;
-    z-index: -1;
-}
-.box::after{
-    position: absolute;
-    content: '';
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    right: -2px;
-    background: #fff;
-    z-index: -2;
-filter: blur(40px);
-}
-.box::before,
-.box::after{
-background: linear-gradient(235deg,#89ff00,#060c21,#00bcd4);
-}
-.contactbox{
-    position: relative;
-background: black;
-margin-right:10px;
-margin-top:10px;
-margin-left: 10px;
-}
-.contactbox::before{
-position: absolute;
-    content: '';
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    right: -2px;
-    background: #fff;
-    z-index: -1;
-}
-.contactbox::after{
-    position: absolute;
-    content: '';
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    right: -2px;
-    background: #fff;
-    z-index: -2;
-filter: blur(40px);
-}
-.contactbox::before,
-.contactbox::after{
-background: linear-gradient(235deg,#339966,#060c21, #0f0f3d);
-}
-
-ul.ul1{
-  position: relative;
-}
-ul.ul1 li.li1{
-  position: relative;
-  cursor: pointer;
-
-}
-ul.ul1 li.li1::before{
-  position: absolute;
-  transition: 0.5s ease-in-out;
-  overflow:hidden;
-  top:0;
-  left: 0;
-  height: 0;
-
-}
-ul.ul1 li.li1:nth-child(1)::before {
-width: 100%;
-  content: '\f099';
-  background-color: #0e76a8;
-
-  color: #0e76a8;
-  border-bottom: 4px solid #0e76a8;
-}
-ul.ul1 li.li1:nth-child(2)::before {
-width: 100%;
-  content: '';
-  background-color: #0e76a8;
-  color: #0e76a8;
-  border-bottom: 4px solid #0e76a8;
-}
-ul.ul1 li.li1:nth-child(3)::before {
-width: 100%;
-  content: '\f099';
-color: green;
-background-color: green;
-
-  border-bottom: 4px solid green;
-}
-ul.ul1 li.li1:nth-child(4)::before {
-width: 100%;
-  content: '\f099';
-color: green;
-background-color: black;
-
-  border-bottom: 4px solid white;
-}
-ul.ul1 li.li1:hover::before{
-  height: 85%;
-  
-}
-.btn3{
-  cursor:pointer;
-  outline: none;
-  transition: 0.3s;
-  background-color: #0000e6;
-}
-.active, .btn4:hover{
- background: #00001a; 
-}
-</style>
-    </head>
-    <body>
-<div  id="mainDiv" class="flex w-full">
-        <nav class="w-24">
-
-    <ul style="color:biz#722F37;font-family: 'young-serif';background-color: #00001a;" class=" py-32  rounded-sm py-2 space-y-4  ">
-        <div class="  flex-col flex w-full items-center">
-        <a href="#Home"><li class="ml-8 icon text-center  "><ion-icon class="text-2xl font-bold text-white" name="home-outline"></ion-icon></li>
-        <li class="text-white text-center ml-8 text-xl font-bold">Home</li></a>
-        </div>
-        <div class="flex-col w-full flex items-center">
-        <a href="#About"><li class="ml-8 icon text-center "><ion-icon class="text-2xl font-bold text-white" name="person-outline"></ion-icon></li>
-        <li class="text-white text-center ml-7 font-bold text-xl">About</li></a>
-    </div>
-    <div class="flex-col w-full flex items-center">
-        <a href="#Protofolio"><li class="ml-8  icon text-center "><ion-icon class="text-2xl font-bold text-white" name="briefcase-outline"></ion-icon></li>
-        <li class="text-white text-center font-bold ml-2 text-xl">Protofolio</li></a>
-    </div>
-    <div class="flex-col flex w-full items-center">
-        <a href="#Contact"><li class="icon ml-8 text-center "><ion-icon class="text-2xl font-bold text-white" name="call-outline"></ion-icon></li>
-        <li class="text-white text-center ml-4 font-bold text-xl">Contact</li></a>
-    </div>
-    </ul>
-    
-
-</nav>
-<div style="width:1600px;"  class=" ">
-
-    <div id="Home" style="height: 700px;" class="box1   w-full flex  items-center justify-center">
-<div class="pl-24  w-1/2 flex-col md:w-1/2">
-   <div class="flex items-center">
-    <p class="text-2xl font-serif">Hello, my name is</p>
-    <p style="font-family:Zeyada ;color:#c49b63"class="pl-2 text-2xl font-bold"> Zekarias Sebsib</p>
-    </div>
-    <div class="text-2xl font-serif flex">
-    <p >I'm a</p>
-         <p class="pl-1 c"style="color:#c49b63;">Front-End Developer</p>
-    </div>
-         <p class="pt-4">Welcome to my portfolio website! As a junior web developer with a passion for coding and a hunger to learn, I'm excited to showcase my projects and skills as I embark on this exciting journey into the world of web development. Explore my work and get to know me better as I take my first steps in this ever-evolving field.</p>
-</div>
-<div class="w-1/2 ">
-<img src="edited.jpg"class="w-96  h-96"/>
-</div>      
-  </div>
-  <div class="my-12 flex-col  ml-24 md:flex-col  sm:flex-col lg:flex-col"id="About">
-   <p class="about-txt text-4xl mt-8 font-bold ">About me</p>
-   <p class=" mt-12 italic mr-8 ">Hello! I'm a passionate and aspiring junior web developer with a strong foundation in web technologies and a burning desire to learn and grow. I'm enthusiastic about creating beautiful and functional websites while continually expanding my skills in this exciting field.</p>
-
-
-
-<div class="flex  flex-col  lg:flex-row  w-full  ">
-<div class="flex-col  w-1/2 2xl:w-1/2 xl:w-1/2 lg:w-full sm:w-full">
-    <div class="space-x-8 2xl:space-x-8 xl:space-x-32 lg:space-x-32 md:space-x-48 sm:space-x-24 mt-8 flex ">
-        <p class="italic">Birthday:17 September 2000</p>
-        <p class="italic ">Age:23</p>
-    </div>
-    <div class="flex space-x-8 mt-3">
-        <hr class="bg-gray-950   2xl:w-96 xl:w-1/2 lg:w-full sm:w-full">
-        <hr class="bg-gray-950   2xl:w-96 xl:w-1/2 lg:w-full sm:w-full">
-        </div>
-        <div class="space-x-2 2xl:space-x-2 xl:space-x-12 lg:space-x-24 md:space-x-48 sm:space-x-24 mt-8 flex ">
-            <p class="italic">Email:zekisesbisb@gmail.com</p>
-            <p class="italic pl-4">Degree:Information Science</p>
-        </div>
-        <div class="flex space-x-8 mt-3">
-            <hr class="bg-gray-950   2xl:w- xl:w-1/2 lg:w-full sm:w-full">
-            <hr class="bg-gray-950   2xl:w-1/2 xl:w-1/2 lg:w-full sm:w-full">
-            </div>
-            <div class="space-x-4 2xl:space-x-4 xl:space-x-16 lg:space-x-32 md:space-x-48 sm:space-x-24 mt-8 flex ">
-                <p class="italic">Phone:+251941246063</p>
-                <p class="italic pl-8">City:Addis Ababa</p>
-            </div>   
-            <div class="flex space-x-8 mt-3">
-                <hr class="bg-gray-950   2xl:w-1/2 xl:w-1/2 lg:w-full sm:w-full">
-                <hr class="bg-gray-950   2xl:w-1/2 xl:w-1/2 lg:w-full sm:w-full">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zekarias Sebsib - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Young+Serif&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #1a1a1a;
+            color: #f5f5f5;
+            font-family: 'Poppins', sans-serif;
+        }
+        @media (min-height: 300px) {
+            nav ul {
+                position: sticky;
+                top: 0;
+                background-color: #1a1a1a;
+            }
+        }
+        .icon {
+            background: linear-gradient(45deg, #7f1d1d, #f87171);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #1a1a1a;
+            transition: transform 0.3s ease;
+        }
+        .activeNav .icon {
+            transform: translateX(20px);
+        }
+        .box1 {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        }
+        .glow-text {
+            color: #facc15;
+            text-shadow: 0 0 10px #facc15, 0 0 20px #facc15;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #facc15, 0 0 10px #facc15; }
+            to { text-shadow: 0 0 10px #facc15, 0 0 20px #facc15; }
+        }
+        .btn1 {
+            background: #3b82f6;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+        .btn1:hover {
+            background: #2563eb;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+        }
+        .box {
+            position: relative;
+            background: #1a1a1a;
+            margin: 16px;
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .box::before, .box::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            bottom: -2px;
+            left: -2px;
+            right: -2px;
+            background: linear-gradient(235deg, #34d399, #1e3a8a, #3b82f6);
+            z-index: -1;
+            border-radius: 8px;
+        }
+        .box::after {
+            filter: blur(20px);
+            z-index: -2;
+        }
+        .contactbox {
+            position: relative;
+            background: #1a1a1a;
+            margin: 16px;
+            padding: 24px;
+            border-radius: 8px;
+        }
+        .contactbox::before, .contactbox::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            bottom: -2px;
+            left: -2px;
+            right: -2px;
+            background: linear-gradient(235deg, #10b981, #1e3a8a, #6b7280);
+            z-index: -1;
+            border-radius: 8px;
+        }
+        .contactbox::after {
+            filter: blur(20px);
+            z-index: -2;
+        }
+        .progress-container {
+            height: 20px;
+            background-color: #4b5563;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            background: #facc15;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: width 1s ease-out;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        .btn3 {
+            background: #3b82f6;
+            color: #ffffff;
+            padding: 8px 24px;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+        .btn3.active, .btn3:hover {
+            background: #1e3a8a;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+        .social:hover {
+            color: #3b82f6;
+            transition: color 0.3s ease;
+        }
+        .section-title {
+            font-family: 'Young Serif', serif;
+            color: #facc15;
+            text-shadow: 0 0 10px #facc15;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainDiv" class="flex w-full min-h-screen">
+        <nav class="w-24 bg-[#1a1a1a] flex justify-center">
+            <ul class="py-16 space-y-6">
+                <li class="flex flex-col items-center">
+                    <a href="#Home" class="flex flex-col items-center">
+                        <div class="icon"><ion-icon class="text-2xl" name="home-outline"></ion-icon></div>
+                        <span class="text-sm font-semibold mt-2">Home</span>
+                    </a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="#About" class="flex flex-col items-center">
+                        <div class="icon"><ion-icon class="text-2xl" name="person-outline"></ion-icon></div>
+                        <span class="text-sm font-semibold mt-2">About</span>
+                    </a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="#Portfolio" class="flex flex-col items-center">
+                        <div class="icon"><ion-icon class="text-2xl" name="briefcase-outline"></ion-icon></div>
+                        <span class="text-sm font-semibold mt-2">Portfolio</span>
+                    </a>
+                </li>
+                <li class="flex flex-col items-center">
+                    <a href="#Contact" class="flex flex-col items-center">
+                        <div class="icon"><ion-icon class="text-2xl" name="call-outline"></ion-icon></div>
+                        <span class="text-sm font-semibold mt-2">Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="flex-1 px-8">
+            <section id="Home" class="min-h-screen flex items-center justify-center box1">
+                <div class="flex flex-col md:flex-row items-center max-w-6xl mx-auto">
+                    <div class="md:w-1/2 p-8">
+                        <div class="flex items-center mb-4">
+                            <p class="text-xl">Hello, my name is</p>
+                            <p class="ml-2 text-2xl font-bold glow-text">Zekarias Sebsib</p>
+                        </div>
+                        <div class="text-xl flex mb-4">
+                            <p>I'm a</p>
+                            <p class="ml-2 glow-text">Front-End Developer</p>
+                        </div>
+                        <p class="text-gray-300">Welcome to my portfolio website! As a junior web developer with a passion for coding, I'm excited to showcase my projects and skills. Explore my work and get to know me better as I grow in this dynamic field.</p>
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <img src="profile-placeholder.jpg" alt="Zekarias Sebsib" class="w-80 h-80 object-cover rounded-full mx-auto" />
+                    </div>
                 </div>
-                    <a href="My Resume.pdf" download target="blank">
-                        <button class="text-center italic p-2 rounded-lg bg-blue-950 mt-8 btn1">Download CV</button>
-                      </a>
-                                      
-</div>
-<div class="flex-col p-4  w-1/2 mb-8 mx-4  md:w-4/5 md:mt-8 sm:mt-8 sm:w-4/5 box ">
-    <div class=" flex space-x-8">
-    <p class="font-serif text-xl py-2 w-1/2">HTML</p>
-    <p class="font-serif text-xl py-2 w-1/2">CSS</p>
-</div>
-<div class="flex space-x-8">
-    <div class="progress-container w-1/2 rounded-full">
-  
-    <div id="progressbar1"style="width:90%" class="progress-bar  bg-blue-600 opacity-100  flex justify-center bg-yellow-950 ">90%</div>
-  </div>
-  <div class="progress-container w-1/2 rounded-full">
-  
-    <div style="width:85%" id="progressbar2" class="progress-bar opacity-100 bg-blue-600 flex justify-center bg-yellow-950">85%</div>
-  </div>
-  </div>
-  <div class=" flex space-x-8">
-  
-  <p class="font-serif text-xl w-1/2 py-2">JavaScript</p>
-  <p class="font-serif text-xl py-2 w-1/2">Java</p>
-  </div>
-<div class="flex space-x-8">
-  
-  <div class="rounded-full progress-container w-1/2">
-  
-    <div id="progressbar3"style="width:65%" class="progress-bar opacity-100 flex justify-center bg-yellow-950">65%</div>
-  </div>  <div class="progress-container rounded-full w-1/2">
-  
-    <div id="progressbar10"style="width:50%" class="progress-bar opacity-100 flex bg-yellow-950 justify-center">50%</div>
-  </div>
-</div>
-<div class=" flex space-x-8">
-  
-    <p class="font-serif text-xl w-1/2 py-2">React</p>
-    <p class="font-serif text-xl py-2 w-1/2">React-Native</p>
+            </section>
+
+            <section id="About" class="py-16 max-w-6xl mx-auto">
+                <h2 class="section-title text-4xl mb-8 text-center">About Me</h2>
+                <p class="text-gray-300 italic mb-12">I'm a passionate junior web developer with a strong foundation in web technologies and a desire to create beautiful, functional websites while continuously expanding my skills.</p>
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="lg:w-1/2">
+                        <div class="flex justify-between mb-4">
+                            <p class="italic">Birthday: 17 September 2000</p>
+                            <p class="italic">Age: 24</p>
+                        </div>
+                        <hr class="border-gray-600 mb-4">
+                        <div class="flex justify-between mb-4">
+                            <p class="italic">Email: zekisebsib@gmail.com</p>
+                            <p class="italic">Degree: Information Science</p>
+                        </div>
+                        <hr class="border-gray-600 mb-4">
+                        <div class="flex justify-between mb-4">
+                            <p class="italic">Phone: +251941246063</p>
+                            <p class="italic">City: Addis Ababa</p>
+                        </div>
+                        <hr class="border-gray-600 mb-4">
+                        <a href="My-Resume.pdf" download class="inline-block">
+                            <button class="btn1 px-6 py-2 rounded-lg">Download CV</button>
+                        </a>
+                    </div>
+                    <div class="lg:w-1/2 box p-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-lg font-semibold">HTML</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 90%;">90%</div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold">CSS</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 85%;">85%</div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold">JavaScript</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 65%;">65%</div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold">Java</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 50%;">50%</div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold">React</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 60%;">60%</div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold">React-Native</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 60%;">60%</div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold">PHP</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 60%;">60%</div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold">MySQL</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 70%;">70%</div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-lg font-semibold">Python</p>
+                                <div class="progress-container">
+                                    <div class="progress-bar" style="width: 40%;">40%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Portfolio" class="py-16 max-w-6xl mx-auto">
+                <h2 class="section-title text-4xl mb-8 text-center">Portfolio</h2>
+                <p class="text-xl mb-8 text-center">My Projects</p>
+                <div class="flex justify-center gap-4 mb-12">
+                    <button id="allBtn" class="btn3 active">All</button>
+                    <button id="indiviualBtn" class="btn3">Individual</button>
+                    <button id="groupBtn" class="btn3">Group</button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div id="project1" class="box p-6">
+                        <img src="EMS-placeholder.jpg" alt="Employee Management System" class="h-48 w-full object-cover rounded-lg mb-4" />
+                        <h3 class="text-xl font-semibold mb-2">Employee Management System</h3>
+                        <p class="text-gray-300 italic mb-4">A system for efficient employee and admin management, including leave tracking and profile editing. Built with HTML, CSS, JavaScript, and PHP.</p>
+                        <a href="Employee-Management-System.zip" download>
+                            <button class="btn1 px-6 py-2 rounded-lg">Download Code</button>
+                        </a>
+                    </div>
+                    <div id="project2" class="box p-6">
+                        <img src="SDM-placeholder.jpg" alt="Student Management System" class="h-48 w-full object-cover rounded-lg mb-4" />
+                        <h3 class="text-xl font-semibold mb-2">Student Management System</h3>
+                        <p class="text-gray-300 italic mb-4">A system for student enrollment and roster management with admin and employee logins. Built with Java and MySQL.</p>
+                        <div class="flex gap-4">
+                            <a href="School-Management-System.zip" download>
+                                <button class="btn1 px-6 py-2 rounded-lg">Download Code</button>
+                            </a>
+                            <a href="Student-Management-System.zip" download>
+                                <button class="btn1 px-6 py-2 rounded-lg">Download App</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="project3" class="box p-6">
+                        <img src="SCM-placeholder.jpg" alt="Student Clearance System" class="h-48 w-full object-cover rounded-lg mb-4" />
+                        <h3 class="text-xl font-semibold mb-2">Student Clearance System</h3>
+                        <p class="text-gray-300 italic mb-4">A system for students, staff, and admins to manage clearance requests with real-time tracking. Built with web technologies.</p>
+                        <a href="https://aau-scs.onrender.com/" target="_blank">
+                            <button class="btn1 px-6 py-2 rounded-lg">Visit App</button>
+                        </a>
+                    </div>
+                    <div id="project4" class="box p-6">
+                        <img src="kiray-placeholder.jpg" alt="House Renting App" class="h-48 w-full object-cover rounded-lg mb-4" />
+                        <h3 class="text-xl font-semibold mb-2">House Renting App</h3>
+                        <p class="text-gray-300 italic mb-4">A user-friendly app for tenants and landlords to manage property rentals. Built with React-Native and PHP.</p>
+                        <a href="House-Renting-Kiray-App.zip" download>
+                            <button class="btn1 px-6 py-2 rounded-lg">Download Code</button>
+                        </a>
+                    </div>
+                    <div id="project5" class="box p-6">
+                        <img src="MathsQuiz-placeholder.jpg" alt="Kids Math Quiz App" class="h-48 w-full object-cover rounded-lg mb-4" />
+                        <h3 class="text-xl font-semibold mb-2">Kids Math Quiz App</h3>
+                        <p class="text-gray-300 italic mb-4">A fun math quiz app for kids with randomized questions. Built with React-Native.</p>
+                        <a href="MathQuiz4Kids.zip" download>
+                            <button class="btn1 px-6 py-2 rounded-lg">Download Code</button>
+                        </a>
+                    </div>
+                    <div id="project7" class="box p-6">
+                        <img src="events-placeholder.jpg" alt="Event Planning Website Template" class="h-48 w-full object-cover rounded-lg mb-4" />
+                        <h3 class="text-xl font-semibold mb-2">Event Planning Website Template</h3>
+                        <p class="text-gray-300 italic mb-4">A UI-focused website template to enhance design skills.</p>
+                        <a href="Event-Planning-Website-Template.zip" download>
+                            <button class="btn1 px-6 py-2 rounded-lg">Download Code</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="Contact" class="py-16 max-w-6xl mx-auto">
+                <h2 class="section-title text-4xl mb-8 text-center">Contact Me</h2>
+                <p class="text-gray-300 text-center mb-12">I’d love to hear from you! Feel free to reach out to discuss potential opportunities.</p>
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="lg:w-1/2 space-y-6">
+                        <div class="flex items-center">
+                            <ion-icon name="location-outline" class="text-2xl text-gray-500 mr-4"></ion-icon>
+                            <div>
+                                <p class="text-blue-400 font-semibold">Address:</p>
+                                <p>Addis Ababa, Ethiopia</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <ion-icon name="call-outline" class="text-2xl text-gray-500 mr-4"></ion-icon>
+                            <div>
+                                <p class="text-blue-400 font-semibold">Phone:</p>
+                                <p>+251941246063</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <ion-icon name="mail-outline" class="text-2xl text-gray-500 mr-4"></ion-icon>
+                            <div>
+                                <p class="text-blue-400 font-semibold">Email:</p>
+                                <p>zekisebsib@gmail.com</p>
+                            </div>
+                        </div>
+                        <ul class="flex gap-4 mt-8">
+                            <li><a href="https://www.linkedin.com/in/zekarias-sebsib-8ab65b253/" target="_blank"><ion-icon name="logo-linkedin" class="text-3xl social"></ion-icon></a></li>
+                            <li><a href="https://twitter.com/SebsibZekarias" target="_blank"><ion-icon name="logo-twitter" class="text-3xl social"></ion-icon></a></li>
+                            <li><a href="https://wa.link/w83m5n" target="_blank"><ion-icon name="logo-whatsapp" class="text-3xl social"></ion-icon></a></li>
+                            <li><a href="https://github.com/zackbizz" target="_blank"><ion-icon name="logo-github" class="text-3xl social"></ion-icon></a></li>
+                        </ul>
+                    </div>
+                    <div class="lg:w-1/2 contactbox">
+                        <h3 class="text-2xl mb-6">Send Message</h3>
+                        <form action="https://formspree.io/f/xwkyvzjr" method="POST" class="space-y-4">
+                            <input type="text" name="Name" placeholder="Enter Your Name" required class="w-full p-3 bg-transparent border-b-2 border-blue-400 text-white focus:outline-none" />
+                            <input type="email" name="Email" placeholder="Enter Your Email" required class="w-full p-3 bg-transparent border-b-2 border-blue-400 text-white focus:outline-none" />
+                            <textarea name="Message" placeholder="Enter Your Message" required rows="5" class="w-full p-3 bg-transparent border-b-2 border-blue-400 text-white focus:outline-none"></textarea>
+                            <div class="flex justify-center">
+                                <button type="submit" class="btn1 px-12 py-3 rounded-lg">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
-<div class="flex space-x-8">
+    <script>
+        'use strict';
+        const buttons = document.querySelectorAll('#firstdiv .btn3');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
 
-  <div class="progress-container w-1/2 rounded-full">
-  
-    <div id="progressbar4"style="width:60%" class="progress-bar opacity-100 bg-yellow-950 flex justify-center">60%</div>
-  </div>
-  <div class="progress-container w-1/2 rounded-full">
-  
-    <div id="progressbar5"style="width:60%" class="progress-bar bg-yellow-950 opacity-100 flex justify-center">60%</div>
-  </div>
-</div>
-<div class=" flex space-x-8">
-  
-    <p class="font-serif text-xl w-1/2 py-2">PHP</p>
-    <p class="font-serif text-xl py-2 w-1/2">MYSQL</p>
-    </div>
-    <div class="flex space-x-8">
+        const navLinks = document.querySelectorAll('nav a');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            navLinks.forEach(link => {
+                const sectionId = link.getAttribute('href').substring(1);
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const sectionTop = section.offsetTop - 50;
+                    const sectionHeight = section.offsetHeight;
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        link.classList.add('activeNav');
+                    } else {
+                        link.classList.remove('activeNav');
+                    }
+                }
+            });
+        });
 
-    <div class="progress-container w-1/2 rounded-full">
-  
-    <div id="progressbar6"style="width:60%" class="progress-bar bg-yellow-950 opacity-100 flex justify-center">60%</div>
-  </div>
-  <div class="progress-container w-1/2 rounded-full">
-  
-    <div id="progressbar7"style="width:70%" class="progress-bar bg-yellow-950 opacity-100 flex justify-center">70%</div>
-  </div>
-  </div>
-  <p class="font-serif text-xl py-2 ">Python</p>
-  <div class="flex pr-8">
-  <div class="progress-container  w-1/2 rounded-full">
-  
-    <div id="progressbar8"style="width:40%" class="bg-yellow-950 progress-bar opacity-100 flex justify-center">40%</div>
-  </div>
-</div>
-</div>
-</div>
+        document.getElementById('allBtn').addEventListener('click', () => {
+            ['project1', 'project2', 'project3', 'project4', 'project5', 'project7'].forEach(id => {
+                document.getElementById(id).style.display = 'block';
+            });
+        });
 
-  </div>
-  <div class="ml-24 flex-col"id="Protofolio">
-    
-    <p class="portfolio-txt text-4xl mt-8 font-bold ">Portfolio</p>
-  <p class="mt-8 font-serif text-2xl">My Projects</p>
-  <div id="firstdiv" class="space-x-4  flex justify-center">
-  <button id="allBtn" class=" py-2 px-4 box3 rounded-full btn3 active">All</button>
-  <button id="indiviualBtn" class=" p-2 box3 rounded-full btn3">Indivdual</button>
-  <button  id="groupBtn" class=" p-2 box3 rounded-full btn3">Group</button>
-</div>
-    <div class="w-full  2xl:space-x-8 xl:space-x-8 space-y-8  lg:space-x-0   justify-center lg:mt-12 flex   flex-col  lg:flex-row mt-12 pr-8 2xl:pr-8 xl:pr-8 lg:pr-24 md:pr-24 pl-0 2xl:pl-0 xl:pl-0 lg:pl-24 md:pl-24">
-      
-<div id="project1" class="w-1/3 p-4 flex-col box1 2xl:w-1/3 xl:w-1/3 mt-8 lg:w-full sm:w-full md:w-full 2xl:space-x-8 xl:space-x-8  lg:space-x-0 ">
-  <img src="EMS.png"class="h-48 w-full"/>
-<p class="font-serif font-bold  text-xl">Employee Managment System</p>
-<p class="italic pt-4">This system enables both employees and employers to have efficient and effective workdays. It offers two login options: one for employees and one for admins. Admins have the ability to monitor how many of their employees are on leave, how many employees have requested a leave, add new employees, manage employee leave, and even add new admins.
+        document.getElementById('indiviualBtn').addEventListener('click', () => {
+            ['project1', 'project7'].forEach(id => document.getElementById(id).style.display = 'block');
+            ['project2', 'project3', 'project4', 'project5'].forEach(id => document.getElementById(id).style.display = 'none');
+        });
 
-  For employees, the system allows them to apply for leave and provides real-time tracking of their leave status. Additionally, both admins and employees have access to the employee board, which enables them to view other employees' information and edit their own profiles, including their passwords. This system was done using html,css, javascript and PHP.</p>
-  <a href="Employee-Management-System.zip" download target="blank">
-    <button class="text-center italic p-2 rounded-lg bg-blue-950 mt-8 btn1">Download Code</button>
-  </a>
-</div>
-<div id="project2" class="w-1/3 flex-col box1 p-4 2xl:w-1/3  xl:w-1/3 lg:w-full sm:w-full md:w-full">
-  <img src="SDM.png"class="h-48 w-full"/>
-  <p class="font-serif font-bold  text-xl">Student Managment System</p>
-<p class="italic pt-4">The system has two logins: one for admin and one for employees. Essentially, the system allows for student enrollment, student registration, and the preparation of rosters for each grade and section.This system was done using Java and MYSQL.</p>
-<div class="flex space-x-4 mt-8">
-<a href="School Management System Version 2.zip" download target="blank">
-
-  <button class="text-center  italic p-2 rounded-lg bg-blue-950  btn1">Download Code</button>
-</a>
-<a  href="Student Management System.zip"download target="blank"><button class="btn1  py-2 px-4 bg-blue-950">Download App</button></a>
-</div>
-</div >
-<div id="project3" class="w-1/3 p-4 flex-col box1 2xl:w-1/3 xl:w-1/3 lg:w-full sm:w-full md:w-full">
-<img src="SCM.png"class="h-48 w-full"/>
-<p class="font-serif font-bold  text-xl">Student Clearance System</p>
-<p class="italic pt-4 pb-4 ">This system has three logins: one for students, one for Staff(department head), and one for registrar(admin). Students can request clearance based on their student status. While the clearance is being processed, students can monitor the progress in real time.  Each department head can either accept or decline the student's clearance request, depending on the student's status. Finally, the admin can accept or decline the clearance after reviewing the responses from each department head.</p>
-<a class="pt-4" href="https://aau-scs.onrender.com/"><button class="btn1 py-2 px-4 bg-blue-950">App</button></a>
-</div>
-</div>
-<div  class=" w-full mt-8 2xl:space-x-8 space-y-8  xl:space-x-8  lg:space-x-0  flex justify-center flex-col  lg:flex-row my-12 pr-8 2xl:pr-8 xl:pr-8 lg:pr-24 md:pr-24 pl-0 2xl:pl-0 xl:pl-0 lg:pl-24 md:pl-24">
-  <div id="project4" class="w-1/3 p-4 flex-col box1 mt-8 2xl:w-1/3 xl:w-1/3 lg:w-full sm:w-full md:w-full ">
-<img src="kiray.png"class="h-64 w-full"/>
-<p class="font-serif font-bold  text-xl">House Renting App</p>
-<p class="italic pt-4">This app is a user-friendly house renting application that simplifies the process of finding and renting properties. With its intuitive interface and robust features, This app caters to both tenants and landlords. The app offers two distinct logins: one for 'Users' seeking rental properties and another for 'Landlords' looking to list their properties for rent. Users can easily browse through available properties and save their favorite listings. They can also communicate directly with landlords, schedule property visits, and complete the rental process seamlessly within the app. Landlords, on the other hand, can efficiently manage their property listings, review tenant applications, and communicate with prospective tenants. With a secure and transparent platform, This app aims to streamline the house renting experience for both tenants and landlords, fostering a hassle-free and efficient rental process. This app is done using React-Native and PHP. </p>
-<a class="pt-4" href="House Renting Kiray App.zip" download target="blank">
-
-  <button class="text-center  italic p-2 mt-8 rounded-lg bg-blue-950  btn1">Download Code</button>
-</a>
-  </div>
-  <div id="project5" class="w-1/3 flex-col box1 p-4 2xl:w-1/3 xl:w-1/3 lg:w-full sm:w-full md:w-full">
-<img src="MathsQuiz.png"class="h-64 w-full"/>
-<p class="font-serif font-bold  text-xl">Kids Math Quiz App</p>
-<p class="italic pt-4">This user-friendly Math Quiz app is designed for kids, preparing them for upcoming tests. Children can select the type of questions, including addition, subtraction, multiplication, and division. Randomly generated question numbers ensure minimal repetition. Upon completion, kids can view their quiz results. The app was developed using React-Native.</p>
-<a class="pt-4" href="MathQuiz4Kids.zip" download target="blank">
-
-  <button class="text-center  italic mt-8 p-2 rounded-lg bg-blue-950  btn1">Download Code</button>
-</a>
-  </div>
-  <div id="project7" style="display: block;" class="w-1/3 flex-col box1  p-4 2xl:w-1/3 xl:w-1/3 lg:w-full sm:w-full md:w-full">
-  <img src="events.png"class="h-48 w-full"/>
-<p class="font-serif font-bold  text-xl">Event Planning Website Template</p>
-<p class="italic pt-4">This website doesn't really do anything. But it has some cool features. I did this increase my UI designing skill.</p>
-<a href="Event Planning Website Template.zip" download target="blank">
-
-  <button class="text-center mt-8 italic p-2 rounded-lg bg-blue-950  btn1">Download Code</button>
-</a>
-  </div>
-  
-  </div>
-
-  </div>
-  <div id="Contact" class="mx-24 my-32 italic  font-bold flex-col  ">
-    
-    <p class="portfolio-txt text-4xl mt-8  text-center font-bold ">Contact Me</p>
-    <p class=" mt-8  text-center">Caring about your thoughts and ideas. Feel free to reach out. I'd love to hear from you and discuss potential opportunities.</p>
-  <div   class=" mx-4 md:mx-12 lg:mx-24 my-8 italic font-bold flex flex-col  lg:flex-row ">
-    <div style="font-family: Poppins;" class="2xl:w-1/2 xl:w-1/2 lg:w-full sm:w-full mb-8 md:w-full flex-col space-y-4  ">
-      <div class="flex   ">
-      <ion-icon class="border-2 text-gray-500 pl-2 hover:border-gray-500 p-2 rounded-full" name="location-outline"></ion-icon>
-      <div class="flex-col font-bold">    
-      <p style="color:#00bcd4;" class="pl-4  italic">Address:</p>
-
-      <p class="pl-4">Addis Ababa,</p>  
-      <p class="pl-4">Ethiopia</p>  
-    </div>
-    </div>
-      <div class="flex  text-gray-500 ">
-
-      <ion-icon class="border-2 hover:border-gray-500 rounded-full p-2" name="call-outline"></ion-icon>
-    <div class="flex-col pl-4 ">
-      <p style="color:#00bcd4" class="pr-1 text-white font-bold">Phone:</p>
-    <p class=" text-white">+251941246063</p>  
-  </div>  
-  </div>
-    <div class="flex items-center text-gray-500 ">
-      <ion-icon name="mail-outline"class="border-2 hover:border-gray-500 rounded-full p-2"></ion-icon>
-<div class="flex-col pl-4">
-      <p style="color:#00bcd4;" class="pr-2 font-bold text-white">Email:</p>
-    <p class=" text-white">zekisebisb@gmail.com</p>
-  </div>  
-  </div>
-  <ul class="ul1 flex pt-8  space-x-4 ">
-  <li class="li1"><a href="https://www.linkedin.com/in/zekarias-sebsib-8ab65b253/"><ion-icon size="large"class="social1" name="logo-linkedin"></ion-icon></a></li>
-  <li class="li1"><a href="https://twitter.com/SebsibZekarias"><ion-icon size="large" class="social"name="logo-twitter"></ion-icon></a></li>
-  <li class="li1"><a href="https://wa.link/w83m5n"><ion-icon size="large" class="social"name="logo-whatsapp"></ion-icon></a></li>
-  <li class="li1"><a href="https://github.com/zackbizz"><ion-icon size="large" class="social"name="logo-github"></ion-icon></a></li>
-  </ul>    
-</div>
-    <div style="font-family: Poppins;" class="2xl:w-1/2 xl:w-1/2 lg:w-full sm:w-full md:w-full  contactbox space-y-4 p-8  ">
-<p  class="text-3xl ">Send Message</p>
-<form action="https://formspree.io/f/xwkyvzjr"method="POST">
-<input  style="border:none;border-bottom:1px solid blue;outline: none;"  class="p-2 text-white border-0  border-b-2 bg-black  border-blue-200 w-full text-black" type="text"name="Name"placeholder="Enter Your Name"required/>
-<input style="border:none;border-bottom:1px solid blue;outline: none;"  class="p-2 text-white border-0  border-b-2 bg-black  border-blue-200 w-full text-black" type="email"name="Email"placeholder="Enter Your Email"required/>
-<textarea rows="5" cols="20" style="border:none;border-bottom:1px solid blue;outline: none;"  class="p-2 text-white border-0  border-b-2 bg-black  border-blue-200 w-full text-black" type="text"name="Message"placeholder="Enter Your Message"required></textarea>
-<div class="flex justify-center mt-6">    
-<button class="text-center box3 py-2 px-24 bg-white text-black hover:bg-blue-950">Send</button>
-</form>
-</div>  
-</div>
-  </div>
-</div>
-</div>
-<script>
-  'use strict'
-  let firstdiv = document.getElementById('firstdiv');
-let btn3 = firstdiv.getElementsByClassName('btn3');
-
-for (var i = 0; i < btn3.length; i++) {
-  btn3[i].addEventListener("click", function () {
-    var current = document.getElementsByClassName("active");
-
-    if (current.length > 0) {
-      current[0].className = current[0].className.replace("active", "");
-    }
-
-    this.className += " active";
-  });
-}
-let navLinks = document.querySelectorAll('nav a');
-
-window.onscroll = () => {
-  let scrollY = window.scrollY;
-
-  navLinks.forEach(link => {
-    let sectionId = link.getAttribute('href').substring(1); // Extract the section id from the href
-    let section = document.getElementById(sectionId);
-    if (section) {
-      let sectionTop = section.offsetTop;
-      let sectionHeight = section.offsetHeight;
-
-      if (sectionTop <= scrollY && scrollY < sectionTop + sectionHeight) {
-        link.classList.add("activeNav");
-      } else {
-        link.classList.remove("activeNav");
-      }
-    }
-  });
-};
-document.getElementById('allBtn').addEventListener("click", function(){
-    document.getElementById("project1").style.display = 'block';
-    document.getElementById("project2").style.display = 'block';
-    document.getElementById("project3").style.display = 'block';
-    document.getElementById("project4").style.display = 'block';
-    document.getElementById("project5").style.display = 'block';
-    document.getElementById("project7").style.display = 'block';
-});
-
-    document.getElementById('indiviualBtn').addEventListener("click",function(){
-        document.getElementById("project1").style.display = 'block';
-        document.getElementById("project2").style.display = 'none';
-        document.getElementById("project3").style.display = 'none';
-        document.getElementById("project4").style.display = 'none';
-        document.getElementById("project5").style.display = 'none';
-        document.getElementById("project7").style.display = 'block';
-    });
-
-document.getElementById('groupBtn').addEventListener("click", function(){
-    document.getElementById("project1").style.display = 'none';
-    document.getElementById("project2").style.display = 'block';
-    document.getElementById("project3").style.display = 'block';
-    document.getElementById("project4").style.display = 'block';
-    document.getElementById("project5").style.display = 'block';
-    document.getElementById("project7").style.display = 'none';
-    
-});
-
-</script>
+        document.getElementById('groupBtn').addEventListener('click', () => {
+            ['project2', 'project3', 'project4', 'project5'].forEach(id => document.getElementById(id).style.display = 'block');
+            ['project1', 'project7'].forEach(id => document.getElementById(id).style.display = 'none');
+        });
+    </script>
 </body>
-
 </html>
